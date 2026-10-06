@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Porcada · Manifiesto Arquitectónico — Ecoresort by Takyma Investment Pioneer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-volcanic: #0a0e0c;
+  --bg-deep: #0f1614;
+  --bg-mid: #14201c;
+  --bg-card: #182521;
+  --emerald-deep: #0a3d2e;
+  --emerald: #1a8a6b;
+  --emerald-light: #2eb892;
+  --gold: #c9a96e;
+  --gold-light: #e8d4a0;
+  --gold-bright: #f4d9a0;
+  --sand: #d4c5a0;
+  --coral: #e8694a;
+  --terracotta: #b85a3a;
+  --cream: #f5f0e6;
+  --muted: #8a9a8e;
+  --border: rgba(201, 169, 110, 0.18);
+  --border-strong: rgba(201, 169, 110, 0.4);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-volcanic);
+  color: var(--cream);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.serif { font-family: 'Fraunces', serif; font-weight: 400; }
+.italic { font-style: italic; }
+
+/* === NAVEGACIÓN === */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 18px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10, 14, 12, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: padding 0.4s ease;
+}
+nav.scrolled { padding: 12px 48px; background: rgba(10, 14, 12, 0.95); }
+
+.nav-left { display: flex; align-items: center; gap: 16px; }
+.nav-logo-img { height: 40px; width: auto; }
+.logo-text {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--gold-light);
+}
+.logo-text span { color: var(--coral); }
+
+.nav-right { display: flex; align-items: center; gap: 24px; }
+.nav-links { display: flex; gap: 28px; flex-wrap: wrap; }
+.nav-links a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: opacity 0.3s, color 0.3s;
+  font-weight: 400;
+}
+.nav-links a:hover { opacity: 1; color: var(--gold-light); }
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  padding: 8px 14px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+.lang-btn:hover { background: var(--gold); color: var(--bg-volcanic); }
+
+.nav-cta {
+  padding: 10px 22px;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.nav-cta:hover { background: var(--gold); color: var(--bg-volcanic); }
+
+/* === HERO === */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 120px 48px 60px;
+  overflow: hidden;
+  background: 
+    radial-gradient(ellipse at 70% 30%, rgba(26, 138, 107, 0.28) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(201, 169, 110, 0.12) 0%, transparent 50%),
+    linear-gradient(180deg, var(--bg-volcanic) 0%, var(--bg-deep) 100%);
+}
+
+.hero-topo {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: clamp(44px, 6.5vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  margin-bottom: 36px;
+}
+.hero h1 .italic { color: var(--gold-light); font-weight: 300; }
+.hero h1 .strong { font-weight: 600; }
+
+.hero-desc {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 580px;
+  margin-bottom: 48px;
+  line-height: 1.7;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+  max-width: 720px;
+}
+.hero-stat .num {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.hero-stat .label {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-width: 560px;
+  margin-left: auto;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+}
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85) contrast(1.1);
+}
+.hero-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, var(--bg-volcanic) 100%);
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 4;
+}
+.scroll-cue::after {
+  content: '';
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+  animation: scrollPulse 2s infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(0.6); opacity: 0.4; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+/* === SECTION GENERAL === */
+section {
+  padding: 140px 48px;
+  position: relative;
+}
+.container { max-width: 1400px; margin: 0 auto; }
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.section-label::before {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+  max-width: 900px;
+}
+.section-title .italic { color: var(--gold-light); }
+.section-intro {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 720px;
+  line-height: 1.7;
+  margin-bottom: 80px;
+}
+
+/* === MANIFIESTO === */
+.manifiesto { background: var(--bg-deep); border-top: 1px solid var(--border); }
+.manifiesto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 100px;
+  align-items: start;
+}
+.manifiesto-quote {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1.4;
+  color: var(--gold-light);
+  position: sticky;
+  top: 120px;
+}
+.manifiesto-quote::before {
+  content: '"';
+  font-size: 80px;
+  color: var(--gold);
+  display: block;
+  line-height: 0.5;
+  margin-bottom: 20px;
+}
+.manifiesto-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--cream);
+  margin-bottom: 24px;
+  opacity: 0.85;
+}
+.manifiesto-text .key { color: var(--gold-light); font-style: italic; }
+
+/* === INGENIERÍA === */
+.ingenieria { background: var(--bg-volcanic); }
+.ing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 60px; }
+.ing-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.4s;
+}
+.ing-card:hover { border-color: var(--gold); }
+.ing-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 60px;
+  background: var(--gold);
+}
+.ing-num { font-family: 'Fraunces', serif; font-size: 14px; color: var(--gold); letter-spacing: 0.2em; margin-bottom: 16px; }
+.ing-card h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 28px; margin-bottom: 18px; color: var(--cream); }
+.ing-card p { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 24px; }
+.ing-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 24px; border-top: 1px solid var(--border); }
+.ing-spec .v { font-family: 'Fraunces', serif; font-size: 22px; color: var(--gold-light); margin-bottom: 4px; }
+.ing-spec .l { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+.epoxy-block {
+  margin-top: 60px;
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-mid) 100%);
+  border: 1px solid var(--border-strong);
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.epoxy-info h3 { font-family: 'Fraunces', serif; font-weight: 300; font-size: 36px; margin-bottom: 20px; color: var(--cream); }
+.epoxy-info h3 .italic { color: var(--gold-light); }
+.epoxy-info p { color: var(--muted); font-size: 15px; line-height: 1.8; margin-bottom: 28px; }
+.epoxy-benefits { display: grid; gap: 14px; }
+.epoxy-benefit { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border); align-items: start; }
+.epoxy-benefit .dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; margin-top: 7px; }
+.epoxy-benefit .t { font-weight: 500; color: var(--cream); font-size: 14px; margin-bottom: 2px; }
+.epoxy-benefit .d { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.epoxy-visual { aspect-ratio: 1 / 1; background: var(--bg-volcanic); border: 1px solid var(--border); position: relative; overflow: hidden; }
+.epoxy-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.epoxy-visual:hover img { transform: scale(1.05); }
+
+/* === HOTEL === */
+.hotel { background: var(--bg-volcanic); }
+.hotel-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 60px; margin-bottom: 80px; }
+.hotel-render { aspect-ratio: 4 / 5; background: var(--bg-deep); border: 1px solid var(--border); position: relative; overflow: hidden; }
+.hotel-render img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.hotel-render:hover img { transform: scale(1.03); }
+.hotel-info { display: flex; flex-direction: column; justify-content: center; }
+.hotel-info h3 { font-family: 'Fraunces', serif; font-weight: 300; font-size: 44px; line-height: 1.05; margin-bottom: 28px; }
+.hotel-info h3 .italic { color: var(--gold-light); }
+.hotel-info p { color: var(--muted); font-size: 16px; line-height: 1.8; margin-bottom: 36px; }
+.hotel-features { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px; }
+.hotel-feature { padding: 24px; background: var(--bg-card); border-left: 2px solid var(--gold); }
+.hotel-feature .v { font-family: 'Fraunces', serif; font-size: 30px; color: var(--gold-light); line-height: 1; margin-bottom: 6px; }
+.hotel-feature .l { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+.hotel-zones { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.zone-card { padding: 32px; background: var(--bg-card); border: 1px solid var(--border); transition: all 0.4s; }
+.zone-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+.zone-card .zone-num { font-family: 'Fraunces', serif; font-size: 13px; color: var(--gold); letter-spacing: 0.2em; margin-bottom: 20px; }
+.zone-card h4 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 22px; margin-bottom: 14px; color: var(--cream); }
+.zone-card p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 18px; }
+.zone-card .area { font-size: 12px; color: var(--gold-light); letter-spacing: 0.1em; padding-top: 14px; border-top: 1px solid var(--border); }
+
+/* === ECORESORT === */
+.ecoresort {
+  background: 
+    radial-gradient(ellipse at 70% 50%, rgba(46, 184, 146, 0.1) 0%, transparent 60%),
+    var(--bg-deep);
+  border-top: 1px solid var(--border);
+}
+.eco-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 60px; }
+.eco-card { background: var(--bg-card); border: 1px solid var(--border); padding: 40px; position: relative; transition: all 0.4s; }
+.eco-card:hover { border-color: var(--emerald-light); transform: translateY(-4px); }
+.eco-icon { width: 56px; height: 56px; border: 1px solid var(--emerald-light); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+.eco-icon svg { width: 28px; height: 28px; }
+.eco-card h4 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 22px; margin-bottom: 14px; color: var(--cream); }
+.eco-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+.eco-card .eco-tag { display: inline-block; margin-top: 18px; padding: 6px 14px; background: rgba(46, 184, 146, 0.1); border: 1px solid var(--emerald); color: var(--emerald-light); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+
+.eco-image-large {
+  margin-top: 60px;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+/* === VILLAS === */
+.villas-tierra { background: var(--bg-volcanic); border-top: 1px solid var(--border); }
+.villa-parcela-diagram { margin-top: 60px; background: var(--bg-card); border: 1px solid var(--border); padding: 40px; }
+.villa-parcela-diagram svg { width: 100%; height: auto; display: block; }
+.parcela-legend { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 30px; padding-top: 30px; border-top: 1px solid var(--border); }
+.parcela-item .v { font-family: 'Fraunces', serif; font-size: 24px; color: var(--gold-light); margin-bottom: 4px; }
+.parcela-item .l { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+.villa-feature-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; margin-top: 80px; align-items: center; }
+.villa-feature-layout.reverse { grid-template-columns: 1fr 1.2fr; }
+.villa-render-large { aspect-ratio: 5 / 4; background: var(--bg-deep); border: 1px solid var(--border); position: relative; overflow: hidden; }
+.villa-render-large img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.villa-render-large:hover img { transform: scale(1.03); }
+.villa-info-large h3 { font-family: 'Fraunces', serif; font-weight: 300; font-size: 42px; line-height: 1.05; margin-bottom: 24px; }
+.villa-info-large h3 .italic { color: var(--gold-light); }
+.villa-info-large p { color: var(--muted); font-size: 16px; line-height: 1.8; margin-bottom: 36px; }
+.villa-specs-large { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-top: 30px; border-top: 1px solid var(--border); }
+.villa-spec-large { padding: 18px; background: var(--bg-card); border-left: 2px solid var(--gold); }
+.villa-spec-large .l { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.villa-spec-large .v { font-family: 'Fraunces', serif; font-size: 20px; color: var(--gold-light); }
+
+.video-trigger { cursor: pointer; }
+.video-play-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px; height: 80px;
+  background: rgba(10, 14, 12, 0.8);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  pointer-events: none;
+  z-index: 2;
+}
+.video-trigger:hover .video-play-btn { background: var(--gold); transform: translate(-50%, -50%) scale(1.1); }
+.video-play-btn::after {
+  content: '';
+  width: 0; height: 0;
+  border-left: 18px solid var(--gold-light);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  margin-left: 6px;
+}
+.video-trigger:hover .video-play-btn::after { border-left-color: var(--bg-volcanic); }
+
+/* === VILLAS MAR === */
+.villas-mar {
+  background: 
+    radial-gradient(ellipse at 70% 50%, rgba(46, 184, 146, 0.12) 0%, transparent 60%),
+    var(--bg-deep);
+  border-top: 1px solid var(--border);
+}
+.plaza-mayor { margin-top: 60px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
+.plaza-visual { aspect-ratio: 5 / 4; background: var(--bg-volcanic); border: 1px solid var(--border); position: relative; overflow: hidden; }
+.plaza-visual svg { width: 100%; height: 100%; }
+.plaza-info h3 { font-family: 'Fraunces', serif; font-weight: 300; font-size: 40px; line-height: 1.05; margin-bottom: 24px; }
+.plaza-info h3 .italic { color: var(--gold-light); }
+.plaza-info p { color: var(--muted); font-size: 16px; line-height: 1.8; margin-bottom: 32px; }
+.plaza-services { display: grid; gap: 14px; }
+.plaza-service { display: grid; grid-template-columns: auto 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--border); align-items: start; }
+.plaza-service .num { font-family: 'Fraunces', serif; color: var(--gold); font-size: 18px; }
+.plaza-service .t { font-weight: 500; color: var(--cream); margin-bottom: 4px; font-size: 14px; }
+.plaza-service .d { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* === TERAPIA === */
+.terapia { background: var(--bg-volcanic); border-top: 1px solid var(--border); }
+.terapia-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 60px; align-items: center; }
+.terapia-visual { aspect-ratio: 4 / 3; background: var(--bg-deep); border: 1px solid var(--border); position: relative; overflow: hidden; }
+.terapia-visual svg { width: 100%; height: 100%; }
+.terapia-info h3 { font-family: 'Fraunces', serif; font-weight: 300; font-size: 42px; line-height: 1.05; margin-bottom: 24px; }
+.terapia-info h3 .italic { color: var(--gold-light); }
+.terapia-info .lead { font-size: 17px; color: var(--muted); line-height: 1.7; margin-bottom: 36px; }
+.terapia-areas { display: grid; gap: 16px; }
+.terapia-area { padding: 20px 24px; background: var(--bg-card); border-left: 2px solid var(--coral); display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: center; }
+.terapia-area .icon { width: 40px; height: 40px; border: 1px solid var(--coral); display: flex; align-items: center; justify-content: center; color: var(--coral); font-family: 'Fraunces', serif; font-size: 14px; }
+.terapia-area .t { font-weight: 500; color: var(--cream); font-size: 15px; margin-bottom: 2px; }
+.terapia-area .d { font-size: 13px; color: var(--muted); }
+.terapia-area .m { font-family: 'Fraunces', serif; color: var(--gold-light); font-size: 14px; }
+
+/* === INFRAESTRUCTURA === */
+.infra { background: var(--bg-deep); border-top: 1px solid var(--border); }
+.infra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 60px; }
+.infra-card { background: var(--bg-card); border: 1px solid var(--border); padding: 48px; position: relative; overflow: hidden; }
+.infra-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--gold) 0%, var(--coral) 100%); }
+.infra-visual { aspect-ratio: 16 / 9; background: var(--bg-volcanic); border: 1px solid var(--border); margin-bottom: 32px; position: relative; overflow: hidden; }
+.infra-visual svg { width: 100%; height: 100%; }
+.infra-card h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 28px; margin-bottom: 18px; color: var(--cream); }
+.infra-card p { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 24px; }
+.infra-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-top: 24px; border-top: 1px solid var(--border); }
+.infra-spec .v { font-family: 'Fraunces', serif; font-size: 20px; color: var(--gold-light); margin-bottom: 4px; }
+.infra-spec .l { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+/* === CASINO === */
+.casino {
+  background: 
+    radial-gradient(ellipse at 50% 50%, rgba(201, 169, 110, 0.1) 0%, transparent 60%),
+    var(--bg-volcanic);
+  border-top: 1px solid var(--border-strong);
+  position: relative;
+  overflow: hidden;
+}
+.casino::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(45deg, transparent 0, transparent 60px, rgba(201, 169, 110, 0.02) 60px, rgba(201, 169, 110, 0.02) 61px),
+    repeating-linear-gradient(-45deg, transparent 0, transparent 60px, rgba(201, 169, 110, 0.02) 60px, rgba(201, 169, 110, 0.02) 61px);
+  pointer-events: none;
+}
+.casino-content { position: relative; z-index: 2; }
+.casino-header { text-align: center; margin-bottom: 80px; }
+.casino-header .section-label { justify-content: center; }
+.casino-header .section-label::after { content: ''; width: 30px; height: 1px; background: var(--gold); }
+.casino-header .section-label::before { display: none; }
+.casino-header h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(40px, 6vw, 76px); line-height: 1.05; margin-bottom: 24px; }
+.casino-header h2 .italic { color: var(--gold-light); }
+.casino-header p { font-size: 18px; color: var(--muted); max-width: 680px; margin: 0 auto; line-height: 1.7; }
+.casino-main { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 80px; }
+.casino-visual { aspect-ratio: 4 / 5; background: linear-gradient(180deg, #1a1410 0%, #0d0907 100%); border: 1px solid var(--gold); position: relative; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.6), inset 0 0 60px rgba(201, 169, 110, 0.05); }
+.casino-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+.casino-visual:hover img { transform: scale(1.05); }
+.casino-info h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 36px; margin-bottom: 24px; color: var(--gold-light); }
+.casino-info p { color: var(--muted); font-size: 16px; line-height: 1.8; margin-bottom: 32px; }
+.security-block { background: var(--bg-card); border: 1px solid var(--border-strong); padding: 36px; margin-top: 32px; position: relative; }
+.security-block::before { content: 'SEGURIDAD'; position: absolute; top: -10px; left: 32px; background: var(--bg-volcanic); padding: 0 14px; font-size: 11px; letter-spacing: 0.3em; color: var(--gold); }
+.security-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 12px; }
+.security-item { display: flex; gap: 14px; align-items: flex-start; }
+.security-item .n { font-family: 'Fraunces', serif; color: var(--gold); font-size: 16px; line-height: 1.4; flex-shrink: 0; }
+.security-item .t { font-size: 13px; color: var(--cream); line-height: 1.5; }
+.casino-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; padding: 60px 0; border-top: 1px solid var(--border-strong); border-bottom: 1px solid var(--border-strong); }
+.casino-stat { text-align: center; }
+.casino-stat .v { font-family: 'Fraunces', serif; font-size: 48px; color: var(--gold-light); line-height: 1; margin-bottom: 8px; font-weight: 300; }
+.casino-stat .l { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+
+/* === SOSTENIBILIDAD === */
+.sostenibilidad { background: var(--bg-volcanic); border-top: 1px solid var(--border); }
+.sost-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 60px; }
+.sost-card { background: var(--bg-card); border: 1px solid var(--border); padding: 40px; transition: all 0.4s; }
+.sost-card:hover { border-color: var(--emerald-light); transform: translateY(-4px); }
+.sost-icon { width: 100%; height: 200px; margin-bottom: 24px; overflow: hidden; background: var(--bg-volcanic); }
+.sost-icon img { width: 100%; height: 100%; object-fit: cover; }
+.sost-card h4 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 22px; margin-bottom: 14px; color: var(--cream); }
+.sost-card p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 18px; }
+.sost-card .status { display: inline-block; padding: 6px 14px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid; }
+.status-ok { background: rgba(46, 184, 146, 0.1); border-color: var(--emerald); color: var(--emerald-light); }
+.status-pending { background: rgba(232, 105, 74, 0.1); border-color: var(--coral); color: var(--coral); }
+
+/* === MEMBRESÍA === */
+.membresia {
+  background: 
+    radial-gradient(ellipse at 50% 50%, rgba(201, 169, 110, 0.1) 0%, transparent 60%),
+    var(--bg-deep);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.membresia-content { max-width: 800px; margin: 0 auto; }
+.membresia h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(36px, 5vw, 56px); line-height: 1.05; margin-bottom: 24px; }
+.membresia h2 .italic { color: var(--gold-light); }
+.membresia p { font-size: 17px; color: var(--muted); line-height: 1.7; margin-bottom: 48px; }
+.membresia-img { width: 100%; max-width: 600px; margin: 0 auto; border: 1px solid var(--border-strong); box-shadow: 0 30px 60px rgba(0,0,0,0.6); display: block; }
+
+/* === FOOTER === */
+footer { background: var(--bg-volcanic); padding: 100px 48px 40px; border-top: 1px solid var(--border-strong); }
+.footer-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+.footer-brand img { height: 60px; margin-bottom: 20px; }
+.footer-brand p { color: var(--muted); font-size: 14px; line-height: 1.7; max-width: 400px; }
+.footer-col h4 { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.footer-col a { display: block; color: var(--muted); text-decoration: none; font-size: 14px; margin-bottom: 12px; transition: color 0.3s; }
+.footer-col a:hover { color: var(--gold-light); }
+.footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); letter-spacing: 0.1em; flex-wrap: wrap; gap: 16px; }
+.footer-bottom strong { color: var(--gold-light); font-weight: 500; }
+
+/* === MODAL VIDEO === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  background: var(--bg-deep);
+  border: 1px solid var(--gold);
+  box-shadow: 0 0 50px rgba(201, 169, 110, 0.2);
+}
+.close-modal {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: var(--gold-light);
+  font-size: 30px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.close-modal:hover { color: var(--coral); }
+.modal-content video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === ANIMATIONS === */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s ease, transform 0.9s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  nav { padding: 14px 24px; }
+  .nav-links { display: none; }
+  section { padding: 100px 24px; }
+  .hero { padding: 100px 24px 60px; }
+  .hero-content { grid-template-columns: 1fr; gap: 60px; }
+  .hero-visual { margin: 0 auto; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .manifiesto-grid { grid-template-columns: 1fr; gap: 50px; }
+  .manifiesto-quote { position: static; font-size: 24px; }
+  .ing-grid { grid-template-columns: 1fr; }
+  .epoxy-block { grid-template-columns: 1fr; }
+  .hotel-hero { grid-template-columns: 1fr; }
+  .hotel-zones { grid-template-columns: 1fr 1fr; }
+  .eco-grid { grid-template-columns: 1fr; }
+  .villa-parcela-diagram { padding: 24px; }
+  .parcela-legend { grid-template-columns: 1fr 1fr; }
+  .villa-feature-layout, .villa-feature-layout.reverse { grid-template-columns: 1fr; }
+  .plaza-mayor { grid-template-columns: 1fr; }
+  .terapia-grid { grid-template-columns: 1fr; }
+  .infra-grid { grid-template-columns: 1fr; }
+  .casino-main { grid-template-columns: 1fr; }
+  .casino-stats { grid-template-columns: 1fr 1fr; }
+  .security-grid { grid-template-columns: 1fr; }
+  .sost-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .hero h1 { font-size: 40px; }
+  .hero-stats { grid-template-columns: 1fr; gap: 20px; }
+  .hotel-zones { grid-template-columns: 1fr; }
+  .casino-stats { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .parcela-legend { grid-template-columns: 1fr; }
+  .epoxy-block { padding: 30px; }
+  .ing-card { padding: 30px; }
+  .villa-specs-large { grid-template-columns: 1fr; }
+  .nav-right { gap: 12px; }
+  .nav-cta { display: none; }
+  .modal-content { width: 95%; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVEGACIÓN -->
+<nav id="nav">
+  <div class="nav-left">
+    <img src="images/ecoresort.png" alt="Ecoresort Porcada" class="nav-logo-img">
+    <div class="logo-text">PORCADA <span>·</span> ISLA</div>
+  </div>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#manifiesto" data-es="Manifiesto" data-en="Manifesto">Manifiesto</a>
+      <a href="#ingenieria" data-es="Ingeniería" data-en="Engineering">Ingeniería</a>
+      <a href="#hotel" data-es="Hotel" data-en="Hotel">Hotel</a>
+      <a href="#villas-tierra" data-es="Villas Tierra" data-en="Land Villas">Villas Tierra</a>
+      <a href="#villas-mar" data-es="Villas Mar" data-en="Sea Villas">Villas Mar</a>
+      <a href="#casino" data-es="Casino" data-en="Casino">Casino</a>
+    </div>
+    <button class="lang-btn" id="lang-toggle">EN</button>
+    <a href="#contacto" class="nav-cta" data-es="Solicitar Dossier" data-en="Request Dossier">Solicitar Dossier</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="hero-topo" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <pattern id="topo" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+        <path d="M 0 100 Q 50 60 100 100 T 200 100" stroke="#c9a96e" stroke-width="0.5" fill="none" opacity="0.4"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#topo)"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-eyebrow" data-es="Isla Porcada · Pacífico Panameño" data-en="Porcada Island · Panamanian Pacific">Isla Porcada · Pacífico Panameño</div>
+      <h1 data-es="Donde el <span class='italic'>volcán</span><br>encuentra el <span class='strong'>mar.</span>" data-en="Where the <span class='italic'>volcano</span><br>meets the <span class='strong'>sea.</span>">
+        Donde el <span class="italic">volcán</span><br>encuentra el <span class="strong">mar.</span>
+      </h1>
+      <p class="hero-desc" data-es="Un complejo ecoresort de 100 villas — 50 sobre tierra de 500 m², 50 sobre el mar diáfanas con piscina infinita — más un hotel de 8 000 m², casino de glamour absoluto, centro de terapia, marina de lujo y pista de aterrizaje. Construido en CLT, acero galvanizado y suelos de epoxy." data-en="An ecoresort complex of 100 villas — 50 on land of 500 m², 50 over the sea open-plan with infinity pools — plus an 8,000 m² hotel, a casino of absolute glamour, a therapy center, a luxury marina, and a landing strip. Built with CLT, galvanized steel, and epoxy floors.">
+        Un complejo ecoresort de 100 villas — 50 sobre tierra de 500 m², 50 sobre el mar diáfanas con piscina infinita — más un hotel de 8 000 m², casino de glamour absoluto, centro de terapia, marina de lujo y pista de aterrizaje. Construido en CLT, acero galvanizado y suelos de epoxy.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">100</div><div class="label" data-es="Villas Totales" data-en="Total Villas">Villas Totales</div></div>
+        <div class="hero-stat"><div class="num">8 000<sup style="font-size:12px;">m²</sup></div><div class="label" data-es="Hotel" data-en="Hotel">Hotel</div></div>
+        <div class="hero-stat"><div class="num">VI</div><div class="label" data-es="Resistencia Sísmica" data-en="Seismic Resistance">Resistencia Sísmica</div></div>
+        <div class="hero-stat"><div class="num">ECO</div><div class="label" data-es="Resort Autónomo" data-en="Autonomous Resort">Resort Autónomo</div></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <img src="images/foto1.jpg" alt="Vista actual de la Isla Porcada" class="hero-img">
+      <div class="hero-img-overlay"></div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" data-es="Descender al manifiesto" data-en="Descend to manifesto">Descender al manifiesto</div>
+</section>
+
+<!-- MANIFIESTO -->
+<section class="manifiesto" id="manifiesto">
+  <div class="container">
+    <div class="section-label" data-es="I · Manifiesto" data-en="I · Manifesto">I · Manifiesto</div>
+    <h2 class="section-title" data-es="Construir en una isla <span class='italic'>volcánica</span> exige una gramática propia." data-en="Building on a <span class='italic'>volcanic</span> island requires its own grammar.">
+      Construir en una isla <span class="italic">volcánica</span> exige una gramática propia.
+    </h2>
+    
+    <div class="manifiesto-grid">
+      <div class="manifiesto-quote reveal" data-es="No se trata de oponer madera y acero. Se trata de hacerlos <em>colaborar</em> — cada material cargando lo que mejor sabe cargar, en un ecoresort que respeta la isla tanto como a quien la habita." data-en="It is not about opposing wood and steel. It is about making them <em>collaborate</em> — each material carrying what it knows best, in an ecoresort that respects the island as much as those who inhabit it.">
+        No se trata de oponer madera y acero. Se trata de hacerlos <em>colaborar</em> — cada material cargando lo que mejor sabe cargar, en un ecoresort que respeta la isla tanto como a quien la habita.
+      </div>
+      <div class="manifiesto-text reveal">
+        <p data-es="La isla Porcada es un fragmento de roca volcánica emergido del Pacífico panameño. Su suelo, sólido pero fracturado; su clima, salino y húmedo; su sismicidad, capaz de alcanzar grado VI. Construir aquí <span class='key'>no admite improvisación</span>." data-en="Porcada Island is a fragment of volcanic rock emerging from the Panamanian Pacific. Its soil, solid but fractured; its climate, saline and humid; its seismicity, capable of reaching grade VI. Building here <span class='key'>admits no improvisation</span>.">
+          La isla Porcada es un fragmento de roca volcánica emergido del Pacífico panameño. Su suelo, sólido pero fracturado; su clima, salino y húmedo; su sismicidad, capaz de alcanzar grado VI. Construir aquí <span class="key">no admite improvisación</span>.
+        </p>
+        <p data-es="Nuestra propuesta combina <span class='key'>madera contralaminada (CLT)</span> de pino radiata tratado, con <span class='key'>acero estructural galvanizado en caliente</span>. El CLT aporta ligereza, calidez, aislamiento y velocidad de montaje; el acero galvanizado entrega la resistencia a flexión, la ductilidad ante el sismo y la inmunidad frente a la corrosión marina. Los suelos se resuelven con <span class='key'>resina epoxy de alto rendimiento</span>, tanto en el hall del hotel como en todas las villas, ofreciendo acabados estéticos excepcionales, higiene absoluta y durabilidad superior." data-en="Our proposal combines <span class='key'>cross-laminated timber (CLT)</span> made from treated radiata pine, with <span class='key'>hot-dip galvanized structural steel</span>. CLT provides lightness, warmth, insulation, and assembly speed; galvanized steel delivers flexural strength, seismic ductility, and immunity to marine corrosion. Floors are solved with <span class='key'>high-performance epoxy resin</span>, both in the hotel hall and all villas, offering exceptional aesthetic finishes, absolute hygiene, and superior durability.">
+          Nuestra propuesta combina <span class="key">madera contralaminada (CLT)</span> de pino radiata tratado, con <span class="key">acero estructural galvanizado en caliente</span>. El CLT aporta ligereza, calidez, aislamiento y velocidad de montaje; el acero galvanizado entrega la resistencia a flexión, la ductilidad ante el sismo y la inmunidad frente a la corrosión marina. Los suelos se resuelven con <span class="key">resina epoxy de alto rendimiento</span>, tanto en el hall del hotel como en todas las villas, ofreciendo acabados estéticos excepcionales, higiene absoluta y durabilidad superior.
+        </p>
+        <p data-es="El complejo se compone de <span class='key'>100 villas</span>: 50 sobre tierra de 500 m² en parcelas de 1 000 m², situadas a 40 m de la orilla — cediendo 23 m por ley de costas que se transforman en jardín y césped entre la piscina infinita y el mar — y 50 villas sobre el mar, plataformas de 200-250 m² con viviendas diáfanas de 150-160 m² y piscinas infinitas propias, organizadas en torno a una <span class='key'>plaza mayor</span> central. Todo el conjunto se concibe como <span class='key'>ecoresort</span>: techos planos con jardines encubiertos y paneles solares cubiertos, ganadería propia, agricultura de subsistencia y agua de manantial en estudio." data-en="The complex consists of <span class='key'>100 villas</span>: 50 on land of 500 m² on 1,000 m² plots, located 40 m from the shore — yielding 23 m due to coastal law, transformed into a garden and lawn between the infinity pool and the sea — and 50 overwater villas, platforms of 200-250 m² with open-plan dwellings of 150-160 m² and their own infinity pools, organized around a central <span class='key'>main square</span>. The entire complex is conceived as an <span class='key'>ecoresort</span>: flat roofs with hidden gardens and covered solar panels, own livestock, subsistence agriculture, and spring water under study.">
+          El complejo se compone de <span class="key">100 villas</span>: 50 sobre tierra de 500 m² en parcelas de 1 000 m², situadas a 40 m de la orilla — cediendo 23 m por ley de costas que se transforman en jardín y césped entre la piscina infinita y el mar — y 50 villas sobre el mar, plataformas de 200-250 m² con viviendas diáfanas de 150-160 m² y piscinas infinitas propias, organizadas en torno a una <span class="key">plaza mayor</span> central. Todo el conjunto se concibe como <span class="key">ecoresort</span>: techos planos con jardines encubiertos y paneles solares cubiertos, ganadería propia, agricultura de subsistencia y agua de manantial en estudio.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INGENIERÍA -->
+<section class="ingenieria" id="ingenieria">
+  <div class="container">
+    <div class="section-label" data-es="II · Ingeniería Híbrida" data-en="II · Hybrid Engineering">II · Ingeniería Híbrida</div>
+    <h2 class="section-title" data-es="CLT + Acero Galvanizado + Epoxy.<br><span class='italic'>Tres materiales, una sola integridad.</span>" data-en="CLT + Galvanized Steel + Epoxy.<br><span class='italic'>Three materials, one integrity.</span>">
+      CLT + Acero Galvanizado + Epoxy.<br><span class="italic">Tres materiales, una sola integridad.</span>
+    </h2>
+    <p class="section-intro" data-es="La madera sufre por humedad, fuego y deformación. El acero sufre por corrosión marina. El epoxy lo cubre todo: suelos continuos, higiénicos, resistentes al agua salada, de acabado especular. Combinados con detalle, los tres sistemas se cubren mutuamente." data-en="Wood suffers from humidity, fire, and deformation. Steel suffers from marine corrosion. Epoxy covers it all: continuous, hygienic floors, resistant to saltwater, with a specular finish. Combined with detail, the three systems cover each other.">
+      La madera sufre por humedad, fuego y deformación. El acero sufre por corrosión marina. El epoxy lo cubre todo: suelos continuos, higiénicos, resistentes al agua salada, de acabado especular. Combinados con detalle, los tres sistemas se cubren mutuamente.
+    </p>
+
+    <div class="ing-grid">
+      <div class="ing-card reveal">
+        <div class="ing-num">01 / CLT</div>
+        <h3 data-es="Madera Contralaminada" data-en="Cross-Laminated Timber">Madera Contralaminada</h3>
+        <p data-es="Paneles de 5 y 7 capas de pino radiata, encolados con adhesivo fenol-resorcinol resistente a humedad. Tratamiento clase de uso 4 (contacto permanente con humedad) mediante autoclave sales hidrosolubles." data-en="5 and 7-layer radiata pine panels, glued with moisture-resistant phenol-resorcinol adhesive. Use class 4 treatment (permanent moisture contact) via water-soluble salts autoclave.">
+          Paneles de 5 y 7 capas de pino radiata, encolados con adhesivo fenol-resorcinol resistente a humedad. Tratamiento clase de uso 4 (contacto permanente con humedad) mediante autoclave sales hidrosolubles.
+        </p>
+        <div class="ing-specs">
+          <div class="ing-spec"><div class="v">175 mm</div><div class="l" data-es="Espesor muro" data-en="Wall thickness">Espesor muro</div></div>
+          <div class="ing-spec"><div class="v">C24+</div><div class="l" data-es="Clase resistiva" data-en="Resistive class">Clase resistiva</div></div>
+          <div class="ing-spec"><div class="v">REI 90</div><div class="l" data-es="Resistencia fuego" data-en="Fire resistance">Resistencia fuego</div></div>
+          <div class="ing-spec"><div class="v">0,18 W/mK</div><div class="l" data-es="Conductividad" data-en="Conductivity">Conductividad</div></div>
+        </div>
+      </div>
+
+      <div class="ing-card reveal">
+        <div class="ing-num">02 / Acero Galvanizado</div>
+        <h3 data-es="Estructura Galvanizada en Caliente" data-en="Hot-Dip Galvanized Structure">Estructura Galvanizada en Caliente</h3>
+        <p data-es="Perfiles laminados S275JR con galvanizado en caliente por inmersión (EN ISO 1461), recubrimiento Z275 mínimo 70 μm. En zonas de proyección marina directa, sistema dúplex: galvanizado + pintura epoxi-poliuretano marino de 240 μm." data-en="S275JR rolled profiles with hot-dip galvanizing (EN ISO 1461), Z275 coating minimum 70 μm. In direct marine spray zones, duplex system: galvanized + marine epoxy-polyurethane paint 240 μm.">
+          Perfiles laminados S275JR con galvanizado en caliente por inmersión (EN ISO 1461), recubrimiento Z275 mínimo 70 μm. En zonas de proyección marina directa, sistema dúplex: galvanizado + pintura epoxi-poliuretano marino de 240 μm.
+        </p>
+        <div class="ing-specs">
+          <div class="ing-spec"><div class="v">275 MPa</div><div class="l" data-es="Límite elástico" data-en="Yield strength">Límite elástico</div></div>
+          <div class="ing-spec"><div class="v">Z275</div><div class="l" data-es="Galvanizado" data-en="Galvanizing">Galvanizado</div></div>
+          <div class="ing-spec"><div class="v">C4-M</div><div class="l" data-es="Categoría corrosión" data-en="Corrosion category">Categoría corrosión</div></div>
+          <div class="ing-spec"><div class="v">50 años</div><div class="l" data-es="Vida útil dúplex" data-en="Duplex lifespan">Vida útil dúplex</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="epoxy-block reveal">
+      <div class="epoxy-info">
+        <h3 data-es="Suelos de <span class='italic'>epoxy</span> — el acabado que une estética y rendimiento." data-en="<span class='italic'>Epoxy</span> floors — the finish that unites aesthetics and performance.">Suelos de <span class="italic">epoxy</span> — el acabado que une estética y rendimiento.</h3>
+        <p data-es="En el hall del hotel y en todas las villas, los suelos se resuelven con resina epoxy multicapa de alto rendimiento. Esto permite acabados continuos sin juntas, efectos visuales exclusivos (mármol, metalizado, terrazo) y una superficie higiénica, impermeable y de altísima durabilidad frente al clima tropical marino." data-en="In the hotel hall and all villas, floors are solved with high-performance multilayer epoxy resin. This allows continuous jointless finishes, exclusive visual effects (marble, metallic, terrazzo), and a hygienic, waterproof surface of high durability against the tropical marine climate.">
+          En el hall del hotel y en todas las villas, los suelos se resuelven con resina epoxy multicapa de alto rendimiento. Esto permite acabados continuos sin juntas, efectos visuales exclusivos (mármol, metalizado, terrazo) y una superficie higiénica, impermeable y de altísima durabilidad frente al clima tropical marino.
+        </p>
+      </div>
+      <div class="epoxy-visual">
+        <img src="images/foto5.png" alt="Suelo de epoxy de alto rendimiento">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOTEL -->
+<section class="hotel" id="hotel">
+  <div class="container">
+    <div class="section-label" data-es="III · Hotel" data-en="III · Hotel">III · Hotel</div>
+    <h2 class="section-title" data-es="8 000 m². Techos a 8 metros.<br><span class='italic'>Una catedral tropical de madera y epoxy.</span>" data-en="8,000 m². 8-meter high ceilings.<br><span class='italic'>A tropical cathedral of wood and epoxy.</span>">
+      8 000 m². Techos a 8 metros.<br><span class="italic">Una catedral tropical de madera y epoxy.</span>
+    </h2>
+    
+    <div class="hotel-hero">
+      <div class="hotel-render reveal">
+        <img src="images/zonascomunes.png" alt="Hall del hotel con suelos de epoxy">
+      </div>
+
+      <div class="hotel-info reveal">
+        <h3 data-es="El hall es una <span class='italic'>nave</span> de madera, donde el CLT deja ver su alma sobre un espejo de epoxy." data-en="The hall is a wooden <span class='italic'>nave</span>, where the CLT shows its soul over an epoxy mirror.">
+          El hall es una <span class="italic">nave</span> de madera, donde el CLT deja ver su alma sobre un espejo de epoxy.
+        </h3>
+        <p data-es="El volumen principal del hotel se resuelve con una nave central de ocho metros de altura libre, cubierta por cerchas mixtas CLT-acero. El suelo de epoxy metalizado refleja la madera, duplicando la percepción del espacio. Una piscina de reflejos prolonga el conjunto hacia el Pacífico." data-en="The main volume of the hotel is solved with a central nave of eight meters of free height, covered by mixed CLT-steel trusses. The metallic epoxy floor reflects the wood, doubling the perception of space. A reflection pool extends the complex towards the Pacific.">
+          El volumen principal del hotel se resuelve con una nave central de ocho metros de altura libre, cubierta por cerchas mixtas CLT-acero. El suelo de epoxy metalizado refleja la madera, duplicando la percepción del espacio. Una piscina de reflejos prolonga el conjunto hacia el Pacífico.
+        </p>
+
+        <div class="hotel-features">
+          <div class="hotel-feature"><div class="v">8 000<sup style="font-size:12px;">m²</sup></div><div class="l" data-es="Superficie total" data-en="Total area">Superficie total</div></div>
+          <div class="hotel-feature"><div class="v">8,0 m</div><div class="l" data-es="Altura libre hall" data-en="Free height hall">Altura libre hall</div></div>
+          <div class="hotel-feature"><div class="v">42</div><div class="l" data-es="Suites deluxe" data-en="Deluxe suites">Suites deluxe</div></div>
+          <div class="hotel-feature"><div class="v">Epoxy</div><div class="l" data-es="Suelos continuos" data-en="Continuous floors">Suelos continuos</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECORESORT -->
+<section class="ecoresort">
+  <div class="container">
+    <div class="section-label" data-es="IV · Filosofía Ecoresort" data-en="IV · Ecoresort Philosophy">IV · Filosofía Ecoresort</div>
+    <h2 class="section-title" data-es="Techos planos, jardines encubiertos,<br><span class='italic'>energía solar invisible.</span>" data-en="Flat roofs, hidden gardens,<br><span class='italic'>invisible solar energy.</span>">
+      Techos planos, jardines encubiertos,<br><span class="italic">energía solar invisible.</span>
+    </h2>
+    
+    <img src="images/foto100.png" alt="Orilla del mar tropical" class="eco-image-large reveal">
+
+    <div class="eco-grid">
+      <div class="eco-card reveal">
+        <div class="eco-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2eb892" stroke-width="1.5">
+            <path d="M3 12l2-2 4 4 8-8 4 4"/><path d="M3 20h18"/>
+          </svg>
+        </div>
+        <h4 data-es="Techos Planos Verdes" data-en="Green Flat Roofs">Techos Planos Verdes</h4>
+        <p data-es="Cubierta vegetal extensiva sobre lámina impermeabilizante y CLT. Aislamiento térmico natural, retención de agua pluvial, integración paisajística con la flora nativa de la isla." data-en="Extensive vegetative cover over waterproofing membrane and CLT. Natural thermal insulation, rainwater retention, landscape integration with the island's native flora.">
+          Cubierta vegetal extensiva sobre lámina impermeabilizante y CLT. Aislamiento térmico natural, retención de agua pluvial, integración paisajística con la flora nativa de la isla.
+        </p>
+        <span class="eco-tag">Fifth Facade</span>
+      </div>
+
+      <div class="eco-card reveal">
+        <div class="eco-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2eb892" stroke-width="1.5">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </div>
+        <h4 data-es="Paneles Solares Encubiertos" data-en="Hidden Solar Panels">Paneles Solares Encubiertos</h4>
+        <p data-es="Paneles fotovoltaicos de alta eficiencia integrados bajo cubiertas transparentes o semiopacas, invisibles desde el suelo. Sistema de baterías de litio-ferrofosfato para autonomía nocturna." data-en="High-efficiency photovoltaic panels integrated under transparent or semi-opaque covers, invisible from the ground. Lithium-iron-phosphate battery system for nighttime autonomy.">
+          Paneles fotovoltaicos de alta eficiencia integrados bajo cubiertas transparentes o semiopacas, invisibles desde el suelo. Sistema de baterías de litio-ferrofosfato para autonomía nocturna.
+        </p>
+        <span class="eco-tag">Energía Invisible</span>
+      </div>
+
+      <div class="eco-card reveal">
+        <div class="eco-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2eb892" stroke-width="1.5">
+            <path d="M12 2v6M8 6l4-4 4 4M5 22h14M7 22V12h10v10"/>
+          </svg>
+        </div>
+        <h4 data-es="Captación & Reuso" data-en="Harvesting & Reuse">Captación & Reuso</h4>
+        <p data-es="Las cubiertas verdes captan agua pluvial filtrada. Estudio hidrogeológico en curso para confirmar manantial propio; en su defecto, planta desalinizadora por ósmosis inversa energizada con solar." data-en="Green roofs capture filtered rainwater. Hydrogeological study underway to confirm own spring; otherwise, a solar-powered reverse osmosis desalination plant.">
+          Las cubiertas verdes captan agua pluvial filtrada. Estudio hidrogeológico en curso para confirmar manantial propio; en su defecto, planta desalinizadora por ósmosis inversa energizada con solar.
+        </p>
+        <span class="eco-tag">Agua Autónoma</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VILLAS TIERRA -->
+<section class="villas-tierra" id="villas-tierra">
+  <div class="container">
+    <div class="section-label" data-es="V · Villas en Tierra" data-en="V · Land Villas">V · Villas en Tierra</div>
+    <h2 class="section-title" data-es="50 villas. 500 m² en dos plantas.<br><span class='italic'>40 m de la orilla, 23 m cedidos al mar.</span>" data-en="50 villas. 500 m² in two floors.<br><span class='italic'>40 m from the shore, 23 m yielded to the sea.</span>">
+      50 villas. 500 m² en dos plantas.<br><span class="italic">40 m de la orilla, 23 m cedidos al mar.</span>
+    </h2>
+
+    <div class="villa-feature-layout">
+      <div class="villa-render-large reveal video-trigger" id="videoTrigger">
+        <img src="video/newvillaporcada.png" alt="Video IA de las villas en tierra">
+        <div class="video-play-btn"></div>
+      </div>
+      
+      <div class="villa-info-large reveal">
+        <h3 data-es="500 m² de <span class='italic'>pura</span> serenidad ecoresort." data-en="500 m² of <span class='italic'>pure</span> ecoresort serenity.">500 m² de <span class="italic">pura</span> serenidad ecoresort.</h3>
+        <p data-es="Una sola tipología para optimizar procesos constructivos y garantizar excelencia. Dos plantas de 250 m² cada una, con estructura mixta CLT y pilares de acero galvanizado vistos. Techos planos ajardinados que desaparecen en el paisaje, integrando paneles solares encubiertos bajo la vegetación. Suelos de epoxy continuo especular." data-en="A single typology to optimize construction processes and guarantee excellence. Two floors of 250 m² each, with a mixed CLT structure and visible galvanized steel pillars. Landscaped flat roofs that blend into the landscape, integrating hidden solar panels under vegetation. Specular continuous epoxy floors.">
+          Una sola tipología para optimizar procesos constructivos y garantizar excelencia. Dos plantas de 250 m² cada una, con estructura mixta CLT y pilares de acero galvanizado vistos. Techos planos ajardinados que desaparecen en el paisaje, integrando paneles solares encubiertos bajo la vegetación. Suelos de epoxy continuo especular.
+        </p>
+        
+        <div class="villa-specs-large">
+          <div class="villa-spec-large"><div class="l" data-es="Construcción Total" data-en="Total Construction">Construcción Total</div><div class="v">500 m²</div></div>
+          <div class="villa-spec-large"><div class="l" data-es="Distribución" data-en="Distribution">Distribución</div><div class="v">2 x 250 m²</div></div>
+          <div class="villa-spec-large"><div class="l" data-es="Parcela" data-en="Plot">Parcela</div><div class="v">1 000 m²</div></div>
+          <div class="villa-spec-large"><div class="l" data-es="Cubierta" data-en="Roof">Cubierta</div><div class="v">Jardín + Solar</div></div>
+          <div class="villa-spec-large"><div class="l" data-es="Suelos" data-en="Floors">Suelos</div><div class="v">Epoxy</div></div>
+          <div class="villa-spec-large"><div class="l" data-es="Estructura" data-en="Structure">Estructura</div><div class="v">CLT + Acero</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VILLAS MAR -->
+<section class="villas-mar" id="villas-mar">
+  <div class="container">
+    <div class="section-label" data-es="VI · Villas sobre el Mar" data-en="VI · Overwater Villas">VI · Villas sobre el Mar</div>
+    <h2 class="section-title" data-es="50 villas sobre el Pacífico,<br><span class='italic'>organizadas en torno a una plaza mayor.</span>" data-en="50 villas over the Pacific,<br><span class='italic'>organized around a main square.</span>">
+      50 villas sobre el Pacífico,<br><span class="italic">organizadas en torno a una plaza mayor.</span>
+    </h2>
+
+    <div class="villa-feature-layout reverse">
+      <div class="villa-info-large reveal">
+        <h3 data-es="Espacio <span class='italic'>diáfano</span> absoluto sobre el océano." data-en="Absolute <span class='italic'>open-plan</span> space over the ocean.">Espacio <span class="italic">diáfano</span> absoluto sobre el océano.</h3>
+        <p data-es="Plataforma de 200 a 250 m² sostenida por pilotes de acero galvanizado dúplex. Sobre ella, una vivienda de 150-160 m² totalmente diáfana, sin particiones estructurales, organizada mediante armarios empotrados. Un único baño de lujo con bañera de hidromasaje. En la plataforma exterior, una pequeña piscina infinita se desborda hacia el horizonte. Suelo de epoxy continuo que simula el agua." data-en="Platform of 200 to 250 m² supported by duplex galvanized steel piles. On it, a totally open-plan dwelling of 150-160 m², without structural partitions, organized using built-in wardrobes. A single luxury bathroom with a hydromassage tub. On the outer platform, a small infinity pool overflows towards the horizon. Continuous epoxy floor that simulates water.">
+          Plataforma de 200 a 250 m² sostenida por pilotes de acero galvanizado dúplex. Sobre ella, una vivienda de 150-160 m² totalmente diáfana, sin particiones estructurales, organizada mediante armarios empotrados. Un único baño de lujo con bañera de hidromasaje. En la plataforma exterior, una pequeña piscina infinita se desborda hacia el horizonte. Suelo de epoxy continuo que simula el agua.
+        </p>
+        
+        <div class="villa-specs-large">
+          <div class="villa-spec-large"><div class="l" data-es="Plataforma" data-en="Platform">Plataforma</div><div class="v">200-250 m²</div></div>
+          <div class="villa-spec-large"><div class="l" data-es="Vivienda" data-en="Dwelling">Vivienda</div><div class="v">150-160 m²</div></div>
+          <div class="villa-spec-large"><div class="l" data-es="Distribución" data-en="Distribution">Distribución</div><div class="v">Diáfana</div></div>
+          <div class="villa-spec-large"><div class="l" data-es="Baño" data-en="Bathroom">Baño</div><div class="v">Hidromasaje</div></div>
+          <div class="villa-spec-large"><div class="l" data-es="Exterior" data-en="Exterior">Exterior</div><div class="v">Piscina Infinita</div></div>
+          <div class="villa-spec-large"><div class="l" data-es="Estructura" data-en="Structure">Estructura</div><div class="v">Pilotes Dúplex</div></div>
+        </div>
+      </div>
+      
+      <div class="villa-render-large reveal">
+        <img src="images/foto9.jpg" alt="Villa sobre el mar diáfana">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASINO -->
+<section class="casino" id="casino">
+  <div class="casino-content">
+    <div class="container">
+      <div class="casino-header">
+        <div class="section-label" data-es="VII · Casino" data-en="VII · Casino">VII · Casino</div>
+        <h2 data-es="Una sala de <span class='italic'>glamour europeo</span><br>en el corazón del Pacífico." data-en="A room of <span class='italic'>European glamour</span><br>in the heart of the Pacific.">
+          Una sala de <span class="italic">glamour europeo</span><br>en el corazón del Pacífico.
+        </h2>
+        <p data-es="El casino es un edificio independiente, conectado al hotel por una galería acristalada. Blindado en su perímetro, vigilado en cada rincón, recubierto en maderas nobles y latón envejecido. Un salón donde el juego se vuelve ceremonia." data-en="The casino is an independent building, connected to the hotel by a glass gallery. Armored on its perimeter, guarded in every corner, covered in fine woods and aged brass. A room where gambling becomes ceremony.">
+          El casino es un edificio independiente, conectado al hotel por una galería acristalada. Blindado en su perímetro, vigilado en cada rincón, recubierto en maderas nobles y latón envejecido. Un salón donde el juego se vuelve ceremonia.
+        </p>
+      </div>
+
+      <div class="casino-main">
+        <!-- Aquí se integra la nueva imagen del casino -->
+        <div class="casino-visual reveal">
+          <img src="images/casino.jpg" alt="Casino Porcada">
+        </div>
+
+        <div class="casino-info reveal">
+          <h3 data-es="Donde el juego se vuelve <em style='color:var(--coral);font-style:italic;'>ceremonia.</em>" data-en="Where gambling becomes <em style='color:var(--coral);font-style:italic;'>ceremony.</em>">Donde el juego se vuelve <em style="color:var(--coral);font-style:italic;">ceremonia.</em></h3>
+          <p data-es="El casino ocupa un pabellón independiente de 1 800 m², conectado al hotel por una galería acristalada de 30 metros. La planta libre se organiza en tres salas: salón principal, salón alto y salón privado. Muros de CLT, columnas de acero galvanizado revestidas en latón, cielorrasos art déco con lucernarios, y suelos de epoxy pulido efecto mármol negro." data-en="The casino occupies an independent pavilion of 1,800 m², connected to the hotel by a 30-meter glass gallery. The open floor plan is organized into three rooms: main salon, high salon, and private salon. CLT walls, galvanized steel columns clad in brass, Art Deco ceilings with skylights, and polished epoxy floors with a black marble effect.">
+            El casino ocupa un pabellón independiente de 1 800 m², conectado al hotel por una galería acristalada de 30 metros. La planta libre se organiza en tres salas: salón principal, salón alto y salón privado. Muros de CLT, columnas de acero galvanizado revestidas en latón, cielorrasos art déco con lucernarios, y suelos de epoxy pulido efecto mármol negro.
+          </p>
+
+          <div class="security-block">
+            <div class="security-grid">
+              <div class="security-item"><div class="n">01</div><div class="t" data-es="Perímetro blindado con muros de hormigón armado 300 mm en sótano." data-en="Armored perimeter with 300 mm reinforced concrete walls in the basement.">Perímetro blindado con muros de hormigón armado 300 mm en sótano.</div></div>
+              <div class="security-item"><div class="n">02</div><div class="t" data-es="Circuito cerrado de 96 cámaras 4K con analítica IA y reconocimiento facial." data-en="96 4K cameras closed circuit with AI analytics and facial recognition.">Circuito cerrado de 96 cámaras 4K con analítica IA y reconocimiento facial.</div></div>
+              <div class="security-item"><div class="n">03</div><div class="t" data-es="Cámara acorazada subterránea clase III con doble puerta temporizada." data-en="Underground Class III armored vault with double timed door.">Cámara acorazada subterránea clase III con doble puerta temporizada.</div></div>
+              <div class="security-item"><div class="n">04</div><div class="t" data-es="Control de accesos biométrico (huella + iris) en salas privadas." data-en="Biometric access control (fingerprint + iris) in private rooms.">Control de accesos biométrico (huella + iris) en salas privadas.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="casino-stats">
+        <div class="casino-stat"><div class="v">1 800<sup style="font-size:14px;">m²</sup></div><div class="l" data-es="Superficie" data-en="Area">Superficie</div></div>
+        <div class="casino-stat"><div class="v">3</div><div class="l" data-es="Salas de Juego" data-en="Gaming Rooms">Salas de Juego</div></div>
+        <div class="casino-stat"><div class="v">96</div><div class="l" data-es="Cámaras 4K" data-en="4K Cameras">Cámaras 4K</div></div>
+        <div class="casino-stat"><div class="v">24/7</div><div class="l" data-es="Vigilancia" data-en="Surveillance">Vigilancia</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOSTENIBILIDAD -->
+<section class="sostenibilidad" id="sostenibilidad">
+  <div class="container">
+    <div class="section-label" data-es="VIII · Autonomía & Sostenibilidad" data-en="VIII · Autonomy & Sustainability">VIII · Autonomía & Sostenibilidad</div>
+    <h2 class="section-title" data-es="Una isla que se <span class='italic'>alimenta a sí misma.</span>" data-en="An island that <span class='italic'>feeds itself.</span>">
+      Una isla que se <span class="italic">alimenta a sí misma.</span>
+    </h2>
+
+    <div class="sost-grid">
+      <div class="sost-card reveal">
+        <div class="sost-icon"><img src="images/foto8.png" alt="Ganado propio de la isla"></div>
+        <h4 data-es="Ganadería Propia" data-en="Own Livestock">Ganadería Propia</h4>
+        <p data-es="Ganado bovino y avícola criado en la isla para abastecer los restaurantes del complejo. Control sanitario veterinario, pastoreo rotacional, trazabilidad completa de la carne." data-en="Cattle and poultry raised on the island to supply the complex's restaurants. Veterinary health control, rotational grazing, complete meat traceability.">
+          Ganado bovino y avícola criado en la isla para abastecer los restaurantes del complejo. Control sanitario veterinario, pastoreo rotacional, trazabilidad completa de la carne.
+        </p>
+        <span class="status status-ok" data-es="Confirmado" data-en="Confirmed">Confirmado</span>
+      </div>
+
+      <div class="sost-card reveal">
+        <div class="sost-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2eb892" stroke-width="1.5"><path d="M12 2C8 6 6 9 6 13a6 6 0 0012 0c0-4-2-7-6-11z"/></svg>
+        </div>
+        <h4 data-es="Agricultura de Subsistencia" data-en="Subsistence Agriculture">Agricultura de Subsistencia</h4>
+        <p data-es="Huertas orgánicas con frutas tropicales, hortalizas y hierbas aromáticas. Invernaderos hidropónicos energizados con solar. Cosecha diaria para restauración y consumo de villas." data-en="Organic orchards with tropical fruits, vegetables, and aromatic herbs. Hydroponic greenhouses powered by solar energy. Daily harvest for restaurant use and villa consumption.">
+          Huertas orgánicas con frutas tropicales, hortalizas y hierbas aromáticas. Invernaderos hidropónicos energizados con solar. Cosecha diaria para restauración y consumo de villas.
+        </p>
+        <span class="status status-ok" data-es="Confirmado" data-en="Confirmed">Confirmado</span>
+      </div>
+
+      <div class="sost-card reveal">
+        <div class="sost-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2eb892" stroke-width="1.5"><path d="M12 2v6M5 10c0-3 3-5 7-5s7 2 7 5"/><path d="M5 10v8a3 3 0 003 3h8a3 3 0 003-3v-8M9 14h6"/></svg>
+        </div>
+        <h4 data-es="Agua de Manantial" data-en="Spring Water">Agua de Manantial</h4>
+        <p data-es="La isla presenta flujos de agua naturales que podrían ser de manantial. Estudio hidrogeológico en curso para confirmar potabilidad y caudal. Si no es apta, se instalará planta desalinizadora por ósmosis inversa con energía solar." data-en="The island has natural water flows that could be from a spring. Hydrogeological study underway to confirm potability and flow rate. If unfit, a solar-powered reverse osmosis desalination plant will be installed.">
+          La isla presenta flujos de agua naturales que podrían ser de manantial. Estudio hidrogeológico en curso para confirmar potabilidad y caudal. Si no es apta, se instalará planta desalinizadora por ósmosis inversa con energía solar.
+        </p>
+        <span class="status status-pending" data-es="En Estudio" data-en="Under Study">En Estudio</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBRESÍA -->
+<section class="membresia">
+  <div class="container">
+    <div class="membresia-content">
+      <div class="section-label" data-es="IX · Membresía Exclusiva" data-en="IX · Exclusive Membership">IX · Membresía Exclusiva</div>
+      <h2 data-es="Privilegios para <span class='italic'>propietarios</span>." data-en="Privileges for <span class='italic'>owners</span>.">Privilegios para <span class="italic">propietarios</span>.</h2>
+      <p data-es="Los propietarios de las villas acceden a beneficios exclusivos dentro del ecoresort, desde accesos privilegiados al casino y centro de terapia, hasta servicios personalizados de hospitalidad en todo el complejo." data-en="Villa owners access exclusive benefits within the ecoresort, from privileged access to the casino and therapy center, to personalized hospitality services throughout the complex.">
+        Los propietarios de las villas acceden a beneficios exclusivos dentro del ecoresort, desde accesos privilegiados al casino y centro de terapia, hasta servicios personalizados de hospitalidad en todo el complejo.
+      </p>
+      <img src="images/mem1.png" alt="Membresía de propietarios de villas" class="membresia-img reveal">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contacto">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Takyma Investment Pioneer">
+      <p data-es="Manifiesto arquitectónico para la isla Porcada, Pacífico panameño. CLT, acero galvanizado y epoxy al servicio de un ecoresort autónomo de 100 villas, hotel, casino, centro de terapia, marina y pista de aterrizaje." data-en="Architectural manifesto for Porcada Island, Panamanian Pacific. CLT, galvanized steel, and epoxy at the service of an autonomous ecoresort with 100 villas, hotel, casino, therapy center, marina, and landing strip.">
+        Manifiesto arquitectónico para la isla Porcada, Pacífico panameño. CLT, acero galvanizado y epoxy al servicio de un ecoresort autónomo de 100 villas, hotel, casino, centro de terapia, marina y pista de aterrizaje.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4 data-es="Proyecto" data-en="Project">Proyecto</h4>
+      <a href="#manifiesto" data-es="Manifiesto" data-en="Manifesto">Manifiesto</a>
+      <a href="#ingenieria" data-es="Ingeniería" data-en="Engineering">Ingeniería</a>
+      <a href="#hotel" data-es="Hotel" data-en="Hotel">Hotel</a>
+      <a href="#villas-tierra" data-es="Villas Tierra" data-en="Land Villas">Villas Tierra</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-es="Programa" data-en="Program">Programa</h4>
+      <a href="#villas-mar" data-es="Villas Mar" data-en="Sea Villas">Villas Mar</a>
+      <a href="#casino" data-es="Casino" data-en="Casino">Casino</a>
+      <a href="#sostenibilidad" data-es="Autonomía" data-en="Autonomy">Autonomía</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
+      <a href="#">dossier@porcada.pa</a>
+      <a href="#">+507 000 0000</a>
+      <a href="#">Ciudad de Panamá</a>
+      <a href="#">Isla Porcada, Pacífico</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>copyright 2026 Ecoresort Porcada by Takyma Investment Pioneer</div>
+    <div>CLT · ACERO GALVANIZADO · EPOXY · ECORESORT AUTÓNOMO</div>
+  </div>
+</footer>
+
+<!-- MODAL VIDEO -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <video id="modalVideo" controls width="100%" poster="video/newvillaporcada.png">
+      <source src="video/newvillaporcada.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de videos HTML5. Asegúrate de tener el archivo newvillaporcada.mp4 en la carpeta video.
+    </video>
+  </div>
+</div>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('in');
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// Language Toggle
+const langToggle = document.getElementById('lang-toggle');
+let currentLang = 'es';
+
+langToggle.addEventListener('click', () => {
+  const elements = document.querySelectorAll('[data-es]');
+  
+  if (currentLang === 'es') {
+    elements.forEach(el => {
+      if (!el.getAttribute('data-es-original')) {
+        el.setAttribute('data-es-original', el.innerHTML);
+      }
+      el.innerHTML = el.getAttribute('data-en');
+    });
+    langToggle.textContent = 'ES';
+    currentLang = 'en';
+    document.documentElement.lang = 'en';
+  } else {
+    elements.forEach(el => {
+      el.innerHTML = el.getAttribute('data-es-original');
+    });
+    langToggle.textContent = 'EN';
+    currentLang = 'es';
+    document.documentElement.lang = 'es';
+  }
+});
+
+// Modal Video Logic (Corregido para evitar bloqueos de Autoplay)
+const videoTrigger = document.getElementById('videoTrigger');
+const videoModal = document.getElementById('videoModal');
+const closeModal = document.querySelector('.close-modal');
+const modalVideo = document.getElementById('modalVideo');
+
+videoTrigger.addEventListener('click', () => {
+  videoModal.style.display = 'flex';
+  modalVideo.muted = true; // Silenciamos para evitar bloqueo del navegador
+  modalVideo.load(); // Recargamos el video
+  modalVideo.play().catch(error => {
+    console.log("El navegador bloqueó el autoplay. El usuario debe hacer clic en play.");
+  });
+});
+
+closeModal.addEventListener('click', () => {
+  videoModal.style.display = 'none';
+  modalVideo.pause();
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target == videoModal) {
+    videoModal.style.display = 'none';
+    modalVideo.pause();
+  }
+});
+</script>
+
+</body>
+</html>
